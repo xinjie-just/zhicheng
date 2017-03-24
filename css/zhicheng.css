@@ -167,6 +167,9 @@ textarea {
   font: inherit; /* 1 */
   margin: 0; /* 2 */
 }
+button:focus {
+	outline: none;
+}
 
 /* 通过之前的规则修复 optgroup 元素的字体粗细 */
 optgroup { font-weight: bold; }
@@ -301,6 +304,24 @@ ul { list-style-type: none; }
   display: table;
 }
 .clearfix:after { clear: both; }
+
+/*===矢量图标字体===*/
+@font-face {font-family: "iconfont";
+  src: url('../iconfont/iconfont.eot?t=1488288562572'); /* IE9*/
+  src: url('../iconfont/iconfont.eot?t=1488288562572#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../iconfont/iconfont.woff?t=1488288562572') format('woff'), /* chrome, firefox */
+  url('../iconfont/iconfont.ttf?t=1488288562572') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../iconfont/iconfont.svg?t=1488288562572#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-time:before { content: "\e615"; }
+.icon-scan:before { content: "\e65f"; }
 
 /* ===基础设置=== */
 figure,
@@ -842,7 +863,7 @@ label:hover {
 .pagination {
   display: inline-block;
   padding-left: 0;
-  margin-top: 20px;
+  margin-top: 30px;
   margin-bottom: 100px;
   border-radius: 4px;
 }
@@ -902,7 +923,27 @@ label:hover {
   background-color: #d9241b;
   border-color: #d9241b;
 }
-
+/*.pagination a {
+    text-decoration: none;
+	border: 1px solid #AAE;
+	color: #15B;
+}
+.pagination a, .pagination span {
+    display: inline-block;
+    padding: 0.1em 0.4em;
+    margin-right: 5px;
+	margin-bottom: 5px;
+}
+.pagination .current {
+    background: #26B;
+    color: #fff;
+	border: 1px solid #AAE;
+}
+.pagination .current.prev, .pagination .current.next{
+	color:#999;
+	border-color:#999;
+	background:#fff;
+}*/
 /*===新闻动态详情===*/
 .news-info {
 	margin-top: 50px;
@@ -956,3 +997,522 @@ label:hover {
 .page .page-next { text-align: right; }
 .page-pre a:hover,
 .page-next a:hover { color: #d9241b; }
+
+/*===工程案例===*/
+.case-main {
+	padding-top: 40px;
+	background-color: #f0f2f5;
+}
+.case-tab {
+	margin-bottom: 30px;
+	height: 60px;	
+	background-color: #fff;
+	border-radius: 5px;
+	border-bottom: 1px solid #e6e6df;
+}
+.case-tab li {
+	float: left;
+}
+.case-tab li a {
+	display: block;
+	height: 60px;
+	line-height: 60px;
+	padding-right: 30px;
+	padding-left: 30px;
+	border-right: 1px solid #e6e6df;
+	margin-left: -1px;
+	font-size: 14px;
+	color: #4d4d4d;
+}
+.case-list li {
+	float: left;	
+}
+.case-list li a {
+	display: block;	
+	width: 350px;
+	height: 374px;
+	margin-right: 25px;
+	margin-bottom: 30px;
+	padding-right: 20px;
+	padding-left: 20px;
+	border-bottom-right-radius: 5px;
+	border-bottom-left-radius: 5px;
+	box-shadow: 0 0 5px #ccc;
+	overflow: hidden;
+}
+.case-tab li a:hover,
+.case-tab li.ui-state-active a {
+	background-color: #ddd;
+}
+.case-tab li.ui-state-active a{
+	cursor: default;
+}
+.case-list li:nth-of-type(3n+3) a {
+	margin-right: 0;
+}
+.case-list li figure {
+	margin-right: -20px;
+	margin-left: -20px;
+	width: 350px;
+	height: 250px;
+	overflow: hidden;
+}
+.case-list li figure img {
+	display: block;
+	width: 350px;
+	height: 250px;
+}
+.case-list li h3 {
+	font-size: 14px;
+	font-weight: normal;
+	color: #434a54;
+	margin-top: 20px;
+}
+.case-list li .type {
+	font-size: 14px;
+	color: #97a3b0;
+	margin-top: 15px;
+}
+.case-list li .look-time {
+	margin-top: 15px;
+	font-size: 15px;
+	color: #97a3b0;
+}
+.case-list li .look-time:before,
+.case-list li .look-time:after {
+	display: table;
+	content: "";
+}
+.case-list li .look-time:after {
+	clear: both;
+}
+.case-list li .look-time span:first-child {
+	float: left;	
+}
+.case-list li .look-time span:last-child {
+	float: right;	
+}
+
+/*===案例详情===*/
+.case-info-main {
+	background-color: #f0f2f5;
+	padding-top: 40px;
+}
+.case-info-main h1 {
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.case-info-main h1 span {
+	position: relative;
+	display: inline-block;
+	font-size: 14px;
+	color: #bbb;
+	letter-spacing: 8px;
+	padding-left: 8px;
+	height: 30px;
+	line-height: 30px;
+}
+.case-info-main h1 span:before {
+	content: "";
+	width: 60px;
+	height: 2px;
+	background-color: #999;
+	position: absolute;
+	left: -80px;
+	top: 14px;
+}
+.case-info-main h1 span:after {
+	content: "";
+	width: 60px;
+	height: 2px;
+	background-color: #999;
+	position: absolute;
+	right: -80px;
+	top: 14px;
+}
+/* 文章正文 */
+.case-info-content .article {
+	width: 830px;
+	padding-right: 20px;
+	margin-bottom: 20px;
+	border-right: 1px dotted #ddd;
+}
+.case-info-content .article .article-details {
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-top: 15px;
+}
+.case-info-content .article img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 30px auto;
+}
+.case-info-content .article p {
+  margin-top: .9em;
+  margin-bottom: .9em;
+  color: #666;
+  line-height: 1.8;
+  text-indent: 2em;
+  text-align: justify;
+  word-wrap: break-word;
+}
+.case-info-content .complementary {
+	width: 230px;
+}
+.case-info-content .complementary h2 {
+	font-size: 18px;
+	color: #333;
+	margin-bottom: 15px;
+}
+.complementary .case-thumbnails {
+	width: 230px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-top: 1px solid #999;
+	border-bottom: 1px solid #999;
+	overflow: hidden;
+	margin-bottom: 25px;
+}
+.complementary .case-thumbnails img {
+	display: block;
+	width: 230px;
+}
+.case-info-content .complementary .back-list {
+	display: block;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid #999;
+	font-size: 14px;
+	color: #6b6b6b;
+  	margin-bottom: 30px;
+}
+/* 上一篇，下一篇 */
+.case-info-page div {
+	font-size: 16px;
+	color: #00552e;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.case-info-page div a {
+	color: #6b6b6b;
+	font-size: 14px;
+}
+.case-info-page div a:hover {
+	color: #00552e;	
+}
+
+/*===招标信息===*/
+.tender {
+	margin-top: 60px;
+}
+.tender h2 {
+	font-size: 30px;
+	color: #4C4C4C;
+	font-weight: 500;
+}
+.tender-item {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px dashed #b3b3b3;	
+}
+.tendering-item,
+.tendering-item a {
+	color: #000;
+}
+.tendered-item,
+.tendered-item a {
+	color: #666;
+}
+.tender-item a {
+	display: block;
+	font-size: 0;
+}
+.tender-item .tender-status {
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	margin-right: 30px;
+	width: 83px;
+	height: 60px;
+	border-radius: 5px;
+	background-repeat: no-repeat;
+	background-position: center 5px;
+}
+.tender-item .tendering {
+	background-color: #00b27e;
+	background-image: url(../img/tendering.png);
+}
+.tender-item .tendered {
+	background-color: #b2b2b2;
+	background-image: url(../img/tendered.png);
+}
+.tender-item .tender-status span {
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	color: #fff;
+	background-color: rgba(0, 0, 0, .5);
+	font-size: 12px;
+}
+.tender-item a {
+	display: block;
+	font-size: 0;
+}
+.tender-item a .text {
+	width: 970px;
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+}
+.tender-item .text h3 {
+	display: inline-block;
+	vertical-align: middle;
+	width: 850px;
+	margin-right: 20px;
+	font-size: 18px;
+	line-height: 30px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.tender-item .text time {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 16px;
+	line-height: 30px;
+}
+.tender-item .text p {
+	font-size: 15px;
+	line-height: 25px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-top: 5px;
+}
+
+/*===招标具体项目===*/
+.tender-info {
+	margin-top: 60px;
+}
+.tender-info h2 {
+	font-size: 30px;
+	color: #4C4C4C;
+	font-weight: 500;
+}
+.tender-info table {
+	margin-top: 30px;
+	width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+}
+/*.tender-info table tr {
+	line-height: 60px;
+}*/
+.tender-info table tr th,
+.tender-info table tr td {
+	border-right: 1px solid #91b0d7;
+	border-bottom: 1px solid #91b0d7;
+	padding: 20px;
+}
+.tender-info table tr th {
+	padding: 10px 20px;
+}
+.tender-info table tr th:first-child,
+.tender-info table tr td:first-child {
+	border-left: 1px solid #91b0d7;
+}
+.tender-info table td:first-child {
+	font-weight: bold;
+	width: 260px;
+}
+.tender-info table th {
+	background-color: #91b0d7;
+	color: #fff;
+}
+.tender-info table tr:first-child th:first-child {
+	border-top: 1px solid #91b0d7;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+.tender-info table tr:last-child td:first-child {
+	border-bottom-left-radius: 10px;
+}
+.tender-info table tr:last-child td:last-child {
+	border-bottom-right-radius: 10px;
+	position: relative;
+}
+.tender-info table .download {
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	margin: auto;
+	transform: translate(0, -50%);
+	display: inline-block;
+	height: 40px;
+	line-height: 40px;
+	padding-right: 20px;
+	padding-left: 20px;
+	background-color: #e01c21;
+	color: #fff;
+	font-size: 20px;
+	border-radius: 15px;
+}
+.want-tender {
+	width: 177px;
+	height: 177px;
+	display: block;
+	background: url(../img/want-tender.png) no-repeat center;
+	margin: 60px auto 170px;
+}
+.want-tender-wrap {
+	z-index: 999;
+	display: none;
+	position: relative;
+	/*top: 0;*/
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .5);
+}
+.want-tender-item {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 940px;
+	padding: 50px 100px;
+	background-color: #fff;
+}
+.want-tender-item h3 {
+	margin-bottom: 20px;
+	font-size: 18px;
+	color: #434343;
+}
+.want-tender-item-form > div {
+	margin-bottom: 25px;
+}
+.want-tender-item-form > div:before,
+.want-tender-item-form > div:after {
+	content: "";
+	display: table;
+}
+.want-tender-item-form > div:after {
+	clear: both;
+}
+.want-tender-item-form label,
+.want-tender-item-form input,
+.want-tender-item-form textarea,
+.want-tender-item-form button {
+	display: block;
+	float: left;
+}
+.want-tender-item-form label,
+.want-tender-item-form input,
+.want-tender-item-form button {	
+	height: 42px;
+	line-height: 42px;
+}
+.want-tender-item-form label {
+	font-size: 16px;
+	color: #434343;
+	margin-right: 5px;;
+}
+.want-tender-item-form input {
+	padding-right: 16px;
+	padding-left: 16px;
+	border: 1px solid #c2c2c2;
+}
+.name input,
+.phone input,
+.address input {
+	width: 300px;	
+}
+.address input {
+	width: 400px;	
+}
+.submit-and-close button {
+	width: 100px;
+	text-align: center;
+	font-size: 14px;
+	letter-spacing: 10px;
+	padding-left: 10px;
+}
+.submit-and-close .submit {
+	margin-left: 100px;
+	margin-right: 30px;
+	color: #fff;
+	background-color: #D9241B;
+}
+.submit-and-close .close {
+	color: #434343;
+	border: 1px solid #d9d9d9;
+	background-color: #fff;
+}
+.select-file {
+	z-index: 1000;
+	position: relative;
+	float: left;
+	margin-left: 80px;
+	width: 250px;
+	height: 40px;
+	cursor: pointer;
+}
+.select-file #file {
+	z-index: 1002;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 40px;
+	opacity: 0;
+	cursor: pointer;
+}
+.select-file .uersDefined {
+	z-index: 1001;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 250px;
+	height: 40px;
+	line-height: 40px;
+	background: url(../img/file-icon.png) no-repeat left center;
+}
+.select-file .uersDefined input {
+	position: absolute;
+	top: 0;
+	left: 50px;
+	width: 200px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+	color: #434343;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	border: none;
+	padding-right: 0;
+	padding-left: 0;
+}
+.add-file {
+	float: left;
+	margin-left: 30px;
+	min-width: 40px;
+	height: 40px;
+	background: url(../img/add-icon.png) no-repeat left center;
+	font-size: 16px;
+	color: #434343;
+	padding-left: 50px;
+}
